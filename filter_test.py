@@ -1,4 +1,5 @@
 #使用filter()过滤出回文数
+#方法一：基于循环实现
 def is_palindrome(n):
     s = str(n)
     length = len(s)
@@ -6,6 +7,11 @@ def is_palindrome(n):
         if s[i] != s[length - i - 1]:
             return False
     return True
+
+#方法二：基于切片实现
+def is_palindrome(n):
+    s = str(n)
+    return s == s[::-1]
     
 # 测试:
 output = filter(is_palindrome, range(1, 10000))
